@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tabata_timer/theme/palette.dart'
+import 'package:tabata_timer/theme/palette.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key, required this.title}) : super(key: key);
@@ -37,9 +37,17 @@ class _HomePageState extends State<HomePage> {
               style: Theme.of(context).textTheme.headline4,
             ),
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                StyledButton(text: "-"),
-                StyledButton(text: "+"),
+              children:  [
+                const StyledButton(text: "-"),
+                Row(
+                  children: const [
+                    Text("30", style: TextStyle(fontSize: 32, height: 1.0, color: Palette.yellow500),),
+                    Text("sec", style: TextStyle(height: 2.0, color: Palette.yellow500)),
+                  ],
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                ),
+                const StyledButton(text: "+"),
               ],
             )
           ],
