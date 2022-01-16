@@ -36,18 +36,36 @@ class _HomePageState extends State<HomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children:  [
-                const StyledButton(text: "-"),
+            Column(
+              children: [
+                const Text("Work",
+                    style: TextStyle(fontSize: 24, color: Palette.yellow500)),
                 Row(
-                  children: const [
-                    Text("30", style: TextStyle(fontSize: 32, height: 1.0, color: Palette.yellow500),),
-                    Text("sec", style: TextStyle(height: 2.0, color: Palette.yellow500)),
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const StyledButton(text: "-"),
+                    Row(
+                      children:  [
+                        Container(
+                          child: const Text(
+                            "30",
+                            style: TextStyle(
+                                fontSize: 32,
+                                height: 1.0,
+                                color: Palette.yellow500)
+                          ),
+                        ),
+                        const Text("sec",
+                            style: TextStyle(
+                                height: 2.0, color: Palette.yellow500)),
+                      ],
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                    ),
+                    const StyledButton(text: "+"),
                   ],
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                 ),
-                const StyledButton(text: "+"),
               ],
             )
           ],
@@ -78,10 +96,7 @@ class StyledButton extends StatelessWidget {
         child: Center(
           child: Text(text,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 20,
-                color: Palette.almostBlack
-              )),
+              style: const TextStyle(fontSize: 20, color: Palette.almostBlack)),
         ));
   }
 }
