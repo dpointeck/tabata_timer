@@ -38,24 +38,25 @@ class _HomePageState extends State<HomePage> {
             ),
             Column(
               children: [
-                const Text("Work",
-                    style: TextStyle(fontSize: 24, color: Palette.yellow500)),
+                const Padding(
+                  padding: EdgeInsets.only(bottom: 8.0),
+                  child: Text("Work",
+                      style: TextStyle(fontSize: 24, color: Palette.yellow500)),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const StyledButton(text: "-"),
                     Row(
-                      children:  [
-                        Container(
-                          child: const Text(
-                            "30",
-                            style: TextStyle(
-                                fontSize: 32,
-                                height: 1.0,
-                                color: Palette.yellow500)
-                          ),
+                      children: const [
+                         Text(
+                          "30",
+                          style: TextStyle(
+                              fontSize: 32,
+                              height: 1.0,
+                              color: Palette.yellow500)
                         ),
-                        const Text("sec",
+                         Text("sec",
                             style: TextStyle(
                                 height: 2.0, color: Palette.yellow500)),
                       ],
