@@ -49,14 +49,12 @@ class _HomePageState extends State<HomePage> {
                     const StyledButton(text: "-"),
                     Row(
                       children: const [
-                         Text(
-                          "30",
-                          style: TextStyle(
-                              fontSize: 32,
-                              height: 1.0,
-                              color: Palette.yellow500)
-                        ),
-                         Text("sec",
+                        Text("30",
+                            style: TextStyle(
+                                fontSize: 32,
+                                height: 1.0,
+                                color: Palette.yellow500)),
+                        Text("sec",
                             style: TextStyle(
                                 height: 2.0, color: Palette.yellow500)),
                       ],
