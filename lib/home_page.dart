@@ -34,11 +34,11 @@ class _HomePageState extends State<HomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
-            Column(
+            const Column(
               children: [
-                const Padding(
+                Padding(
                   padding: EdgeInsets.only(bottom: 8.0),
                   child: Text("Work",
                       style: TextStyle(fontSize: 24, color: Palette.yellow500)),
@@ -46,9 +46,9 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const StyledButton(text: "-"),
+                    StyledButton(text: "-"),
                     Row(
-                      children: const [
+                      children: [
                         Text("30",
                             style: TextStyle(
                                 fontSize: 32,
@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.end,
                     ),
-                    const StyledButton(text: "+"),
+                    StyledButton(text: "+"),
                   ],
                   crossAxisAlignment: CrossAxisAlignment.center,
                 ),

@@ -1,15 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:tabata_timer/home_page.dart';
 import './theme/custom_theme.dart';
+import './services/storage_service.dart';
+import './services/audio_service.dart';
+import './screens/workout_list_screen.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  final storageService = StorageService();
+  await storageService.init();
+
+  final audioService = AudioService();
+
+  runApp(MyApp(
+    storageService: storageService,
+    audioService: audioService,
+  ));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  final StorageService storageService;
+  final AudioService audioService;
 
-  // This widget is the root of your application.
+  const MyApp({
+    Key? key,
+    required this.storageService,
+    required this.audioService,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,9 +35,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       darkTheme: CustomTheme.darkTheme(context),
       themeMode: ThemeMode.dark,
-      home: const HomePage(title: 'Tabata Timer'),
+      home: WorkoutListScreen(
+        storageService: storageService,
+        audioService: audioService,
+      ),
     );
   }
 }
-
-
